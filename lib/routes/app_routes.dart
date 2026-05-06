@@ -1,3 +1,4 @@
+import 'package:cropify_app/features/home/views/widgets/home_screen.dart';
 import 'package:cropify_app/features/onboarding/views/screens/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'route_paths.dart';
@@ -19,6 +20,11 @@ class AppRouter {
         path: RoutePaths.onboarding,
         name: RouteNames.onboarding,
         builder: (context, state) => OnboardingScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.home,
+        name: RouteNames.home,
+        builder: (context, state) => HomeScreen(),
       ),
     ],
   );

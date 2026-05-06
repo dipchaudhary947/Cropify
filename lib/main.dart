@@ -1,13 +1,20 @@
-import 'package:cropify_app/features/splash/views/screens/splash_screen.dart';
+import 'package:cropify_app/core/services/preferences_service.dart';
 import 'package:cropify_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  PreferencesService.instance.init();
+  bool? isOnboardingDone = await PreferencesService.instance.getBool(
+    'onboardingDone',
+  );
+  runApp(MyApp(isOnboardingDone: isOnboardingDone ?? false));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.isOnboardingDone});
+
+  final bool isOnboardingDone;
 
   // This widget is the root of your application.
   @override
