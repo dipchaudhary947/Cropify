@@ -1,3 +1,5 @@
+import 'package:cropify_app/features/auth/views/screens/login_screen.dart';
+import 'package:cropify_app/features/auth/views/screens/register_screen.dart';
 import 'package:cropify_app/features/home/views/widgets/home_screen.dart';
 import 'package:cropify_app/features/onboarding/views/screens/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -25,6 +27,16 @@ class AppRouter {
         path: RoutePaths.home,
         name: RouteNames.home,
         builder: (context, state) => HomeScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.login,
+        name: RouteNames.login,
+        builder: (context, state) => LoginScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.regsiter,
+        name: RouteNames.regsiter,
+        builder: (context, state) => RegisterScreen(),
       ),
     ],
   );

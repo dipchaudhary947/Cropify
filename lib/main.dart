@@ -1,6 +1,8 @@
+import 'package:cropify_app/core/constants/theme/app_theme.dart';
 import 'package:cropify_app/core/services/preferences_service.dart';
 import 'package:cropify_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -8,7 +10,9 @@ void main() async {
   bool? isOnboardingDone = await PreferencesService.instance.getBool(
     'onboardingDone',
   );
-  runApp(MyApp(isOnboardingDone: isOnboardingDone ?? false));
+  runApp(
+    ProviderScope(child: MyApp(isOnboardingDone: isOnboardingDone ?? false)),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Cropify',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      theme: AppTheme.lightTheme,
       routerConfig: AppRouter.router,
     );
   }

@@ -52,7 +52,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       // navigate to home
       await PreferencesService.instance.setBool("onboarding", true);
       if (mounted) {
-        context.goNamed(RouteNames.home);
+        context.goNamed(RouteNames.login);
       }
     }
   }
