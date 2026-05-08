@@ -23,13 +23,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       lottieImage: "assets/lottie/onboarding01.json",
     ),
     OnbardingModel(
-      title: "Cropify – Farm to Doorstep",
+      title: "Farm to Doorstep",
       description:
           "With Cropify, buying and selling fresh food is simple. Farmers sell directly. Customers get fresh produce on demand. Built for speed, trust, and everyday convenience.",
       lottieImage: "assets/lottie/onboarding02.json",
     ),
     OnbardingModel(
-      title: "Cropify – The Fresh Food Network",
+      title: "Fresh Food Network",
       description:
           "Cropify is the fastest way to move food from farms to people. Farmers grow, list, and sell. Customers browse, order, and receive—fresh, reliable, and hassle-free.",
       lottieImage: "assets/lottie/onboarding03.json",

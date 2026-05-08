@@ -15,84 +15,96 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authVM = ref.read(authViewModelProvider);
+
     return Scaffold(
       backgroundColor: AppColors.lightBackground,
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-          child: Column(
-            children: [
-              LogoSection(),
-              Spacer(),
-              FarmerImage(),
-              Text(
-                AppStrings.title1,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 42,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.darkText,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+            child: Column(
+              children: [
+                const LogoSection(),
+
+                const FarmerImage(),
+
+                const SizedBox(height: 10),
+
+                Text(
+                  AppStrings.title1,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 38,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.darkText,
+                  ),
                 ),
-              ),
-              Text(
-                AppStrings.title2,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 42,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.primaryGreen,
+
+                Text(
+                  AppStrings.title2,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 38,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryGreen,
+                  ),
                 ),
-              ),
-              SizedBox(height: 14),
-              Text(
-                AppStrings.subtitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  height: 1.5,
-                  color: Colors.black54,
+
+                const SizedBox(height: 14),
+
+                Text(
+                  AppStrings.subtitle,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    height: 1.5,
+                    color: Colors.black54,
+                  ),
                 ),
-              ),
-              SizedBox(height: 40),
-              AuthButton(
-                text: AppStrings.signUp,
-                backgroundColor: AppColors.primaryGreen,
-                textColor: Colors.white,
-                onTap: () {
-                  // authVM.signUp,
-                  context.goNamed(RouteNames.regsiter);
-                },
-              ),
-              SizedBox(height: 16),
-              AuthButton(
-                text: AppStrings.login,
-                backgroundColor: AppColors.grayButton,
-                textColor: Colors.black,
-                border: BorderSide(color: Colors.grey.shade300),
-                onTap: () {
-                  // authVM.login,
-                  context.goNamed(RouteNames.home);
-                },
-              ),
-              SizedBox(height: 24),
-              RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  style: TextStyle(color: Colors.black54, fontSize: 12),
-                  children: [
-                    TextSpan(text: "By continuing you agree to our "),
-                    TextSpan(
-                      text: "Terms",
-                      style: TextStyle(
-                        color: AppColors.primaryGreen,
-                        fontWeight: FontWeight.w600,
+
+                const SizedBox(height: 32),
+
+                AuthButton(
+                  text: AppStrings.signUp,
+                  backgroundColor: AppColors.primaryGreen,
+                  textColor: Colors.white,
+                  onTap: () {
+                    context.goNamed(RouteNames.regsiter);
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                AuthButton(
+                  text: AppStrings.login,
+                  backgroundColor: AppColors.grayButton,
+                  textColor: Colors.black,
+                  border: BorderSide(color: Colors.grey.shade300),
+                  onTap: () {
+                    context.goNamed(RouteNames.home);
+                  },
+                ),
+
+                const SizedBox(height: 24),
+
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(color: Colors.black54, fontSize: 12),
+                    children: [
+                      TextSpan(text: "By continuing you agree to our "),
+                      TextSpan(
+                        text: "Terms",
+                        style: TextStyle(
+                          color: AppColors.primaryGreen,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 10),
-            ],
+              ],
+            ),
           ),
         ),
       ),
