@@ -6,6 +6,9 @@ class AppColors {
   static const lightBackground = Color(0xFFF5F1E8);
   static const grayButton = Color(0xFFF3F3F3);
   static const cardBorder = Color(0xFFDAD5C8);
+  static const grey = Color(0xFF777777);
+  static const border = Color(0xFFE0E0E0);
+  static const lightGreen = Color(0xFFDFF5DF);
 }
 
 class AppColorsDark {

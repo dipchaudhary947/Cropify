@@ -1,1 +1,0 @@
-enum RoleType { buyer, farmer }

@@ -18,10 +18,12 @@ class LoginScreen extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: AppColors.lightBackground,
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+
             child: Column(
               children: [
                 const LogoSection(),
@@ -62,7 +64,7 @@ class LoginScreen extends ConsumerWidget {
                   ),
                 ),
 
-                const SizedBox(height: 32),
+                const SizedBox(height: 100),
 
                 AuthButton(
                   text: AppStrings.signUp,
@@ -87,21 +89,29 @@ class LoginScreen extends ConsumerWidget {
 
                 const SizedBox(height: 24),
 
-                RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: TextStyle(color: Colors.black54, fontSize: 12),
-                    children: [
-                      TextSpan(text: "By continuing you agree to our "),
-                      TextSpan(
-                        text: "Terms",
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don't have an account? ",
+                      style: TextStyle(color: Colors.black54, fontSize: 14),
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        context.goNamed(RouteNames.regsiter);
+                      },
+
+                      child: const Text(
+                        "Sign Up",
                         style: TextStyle(
                           color: AppColors.primaryGreen,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
