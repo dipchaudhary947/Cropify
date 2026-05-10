@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
     )..repeat();
 
     // Navigation
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
         context.goNamed(RouteNames.onboarding);
       }

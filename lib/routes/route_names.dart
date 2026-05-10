@@ -10,6 +10,7 @@ class RouteNames {
   static const customerOrders = 'CustomerOrders';
   static const cart = 'cart';
   static const customerProfile = 'customerProfile';
+  static const allCategories = 'allCategories';
 
   //Farmer Bottom Nav Screens
   static const farmerBottomScreen = 'farmerBottomScreen';

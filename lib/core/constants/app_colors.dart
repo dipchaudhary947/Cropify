@@ -9,6 +9,7 @@ class AppColors {
   static const grey = Color(0xFF777777);
   static const border = Color(0xFFE0E0E0);
   static const lightGreen = Color(0xFFDFF5DF);
+  static const searchBg = Color(0xFFF3F1E8);
 }
 
 class AppColorsDark {

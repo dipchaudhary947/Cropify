@@ -60,7 +60,7 @@ class RoleSelector extends ConsumerWidget {
 
                   Text(
                     role.subtitle,
-                    style: const TextStyle(fontSize: 12, color: AppColors.grey),
+                    style: const TextStyle(fontSize: 10, color: AppColors.grey),
                   ),
                 ],
               ),

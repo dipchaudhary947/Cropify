@@ -2,10 +2,12 @@ import 'package:cropify_app/features/auth/views/screens/login_screen.dart';
 import 'package:cropify_app/features/auth/views/screens/register_screen.dart';
 
 import 'package:cropify_app/features/onboarding/views/screens/onboarding_screen.dart';
+import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/model/category_model.dart';
+import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/views/screens/all_categories_screen.dart';
 import 'package:cropify_app/features/splash/views/screens/splash_screen.dart';
 
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_nav_bar/customer_bottom_screen.dart';
-import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/views/widgets/home_screen.dart';
+import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/views/screens/home_screen.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_order/views/screens/customer_orders_screen.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/cart/views/screens/cart_screen.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_profile/views/screens/customer_profile_screen.dart';
@@ -52,7 +54,7 @@ class AppRouter {
       GoRoute(
         path: RoutePaths.register,
         name: RouteNames.regsiter,
-        builder: (context, state) => const RegisterScreen(),
+        builder: (context, state) => RegisterScreen(),
       ),
 
       // =========================
@@ -70,7 +72,7 @@ class AppRouter {
               GoRoute(
                 path: RoutePaths.home,
                 name: RouteNames.home,
-                builder: (context, state) => const HomeScreen(),
+                builder: (context, state) => HomeScreen(),
               ),
             ],
           ),
@@ -108,6 +110,18 @@ class AppRouter {
             ],
           ),
         ],
+      ),
+
+      // ALL CATEGORIES
+      // ALL CATEGORIES
+      GoRoute(
+        path: RoutePaths.allCategories,
+        name: RouteNames.allCategories,
+        builder: (context, state) {
+          final categories = state.extra as List<CategoryModel>;
+
+          return AllCategoriesScreen(categories: categories);
+        },
       ),
 
       // =========================
