@@ -65,7 +65,7 @@ class CategoriesSection extends StatelessWidget {
       children: [
         /// Header
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.only(left: 20, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

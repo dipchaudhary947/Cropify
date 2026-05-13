@@ -10,6 +10,7 @@ class RoutePaths {
   static const cart = '/cart';
   static const customerProfile = '/customerProfile';
   static const allCategories = '/allCategories';
+  static const allProducts = '/all-products';
 
   // FARMER
   static const dashboard = '/dashboard';
