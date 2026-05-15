@@ -17,14 +17,17 @@ class FeaturedNearbyFarmersSection extends ConsumerWidget {
 
     return Column(
       children: [
-        NearbyFarmerSectionHeader(
-          title: "Nearby Farmers",
-          onSeeAll: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const AllFarmersScreen()),
-            );
-          },
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: NearbyFarmerSectionHeader(
+            title: "Nearby Farmers",
+            onSeeAll: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const AllFarmersScreen()),
+              );
+            },
+          ),
         ),
 
         const SizedBox(height: 16),

@@ -17,6 +17,7 @@ class ProductCard extends StatelessWidget {
         border: Border.all(color: Colors.grey.shade200),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Align(
@@ -32,6 +33,7 @@ class ProductCard extends StatelessWidget {
                 children: [
                   const Icon(Icons.star, size: 14, color: Colors.orange),
                   const SizedBox(width: 2),
+
                   Text(
                     product.rating.toString(),
                     style: const TextStyle(fontSize: 12),
@@ -43,23 +45,29 @@ class ProductCard extends StatelessWidget {
 
           const SizedBox(height: 8),
 
-          Center(child: Image.asset(product.image, height: 90)),
+          Center(
+            child: Image.asset(product.image, height: 85, fit: BoxFit.contain),
+          ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
 
           Text(
             product.name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
 
-          const SizedBox(height: 3),
+          const SizedBox(height: 2),
 
           Text(
             product.farmName,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
           ),
 
-          const Spacer(),
+          const SizedBox(height: 10),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

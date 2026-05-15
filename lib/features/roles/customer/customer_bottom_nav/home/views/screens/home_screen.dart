@@ -43,11 +43,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 24),
               FeaturedProductsSection(),
               SizedBox(height: 24),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: FeaturedNearbyFarmersSection(),
-              ),
-              SizedBox(height: 20),
+              FeaturedNearbyFarmersSection(),
             ],
           ),
         ),

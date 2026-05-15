@@ -28,14 +28,12 @@ class AllProductsScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         child: GridView.builder(
           itemCount: products.length,
-
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 14,
             mainAxisSpacing: 14,
-            childAspectRatio: 0.72,
+            childAspectRatio: 0.70,
           ),
-
           itemBuilder: (context, index) {
             return ProductCard(product: products[index]);
           },

@@ -7,7 +7,9 @@ class FarmerStatusBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isOpen = status == "OPEN";
+    final normalizedStatus = status.toUpperCase();
+
+    final isOpen = normalizedStatus == "OPEN";
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -19,7 +21,7 @@ class FarmerStatusBadge extends StatelessWidget {
       ),
 
       child: Text(
-        status,
+        isOpen ? "OPEN" : "CLOSED",
 
         style: TextStyle(
           fontSize: 10,

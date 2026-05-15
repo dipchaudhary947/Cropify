@@ -34,14 +34,11 @@ class FarmerFilterChips extends StatelessWidget {
 
     return SizedBox(
       height: 40,
-
       child: ListView.separated(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         scrollDirection: Axis.horizontal,
-
         itemCount: filters.length,
-
         separatorBuilder: (_, __) => const SizedBox(width: 10),
-
         itemBuilder: (context, index) {
           final filter = filters[index];
 
@@ -51,22 +48,16 @@ class FarmerFilterChips extends StatelessWidget {
             onTap: () {
               onSelected(filter);
             },
-
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-
               decoration: BoxDecoration(
                 color: isSelected ? Colors.green : const Color(0xffEFEFDF),
-
                 borderRadius: BorderRadius.circular(20),
               ),
-
               child: Text(
                 getTitle(filter),
-
                 style: TextStyle(
                   color: isSelected ? Colors.white : Colors.black87,
-
                   fontWeight: FontWeight.w600,
                 ),
               ),

@@ -21,7 +21,11 @@ class VisitButton extends StatelessWidget {
         child: const Text(
           "Visit",
 
-          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+          ),
         ),
       ),
     );

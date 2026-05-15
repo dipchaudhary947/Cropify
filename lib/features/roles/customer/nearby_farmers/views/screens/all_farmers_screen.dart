@@ -52,48 +52,48 @@ class _AllFarmersScreenState extends ConsumerState<AllFarmersScreen> {
         ),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(16),
+      body: Column(
+        children: [
+          /// MAP
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: const FarmerMapSection(),
+          ),
 
-        child: Column(
-          children: [
-            /// MAP
-            const FarmerMapSection(),
+          /// SEARCH
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: const FarmerSearchField(),
+          ),
 
-            const SizedBox(height: 18),
+          const SizedBox(height: 18),
 
-            /// SEARCH
-            const FarmerSearchField(),
+          /// FILTERS
+          FarmerFilterChips(
+            selectedFilter: selectedFilter,
 
-            const SizedBox(height: 18),
+            onSelected: (filter) {
+              setState(() {
+                selectedFilter = filter;
+              });
+            },
+          ),
 
-            /// FILTERS
-            FarmerFilterChips(
-              selectedFilter: selectedFilter,
+          const SizedBox(height: 18),
 
-              onSelected: (filter) {
-                setState(() {
-                  selectedFilter = filter;
-                });
+          /// FARMERS LIST
+          Expanded(
+            child: ListView.separated(
+              itemCount: farmers.length,
+
+              separatorBuilder: (_, __) => const SizedBox(height: 14),
+
+              itemBuilder: (context, index) {
+                return NearbyFarmerCard(farmer: farmers[index]);
               },
             ),
-
-            const SizedBox(height: 18),
-
-            /// FARMERS LIST
-            Expanded(
-              child: ListView.separated(
-                itemCount: farmers.length,
-
-                separatorBuilder: (_, __) => const SizedBox(height: 14),
-
-                itemBuilder: (context, index) {
-                  return NearbyFarmerCard(farmer: farmers[index]);
-                },
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
