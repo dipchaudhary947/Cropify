@@ -4,7 +4,9 @@ import 'package:cropify_app/features/auth/views/screens/register_screen.dart';
 import 'package:cropify_app/features/onboarding/views/screens/onboarding_screen.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/model/category_model.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/views/screens/all_categories_screen.dart';
+import 'package:cropify_app/features/roles/customer/products/model/product_model.dart';
 import 'package:cropify_app/features/roles/customer/products/views/screens/all_products_screen.dart';
+import 'package:cropify_app/features/roles/customer/products/views/screens/product_details_screen.dart';
 import 'package:cropify_app/features/splash/views/screens/splash_screen.dart';
 
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_nav_bar/customer_bottom_screen.dart';
@@ -128,6 +130,15 @@ class AppRouter {
         path: RoutePaths.allProducts,
         name: RouteNames.allProducts,
         builder: (context, state) => const AllProductsScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.productDetails,
+        name: RouteNames.productDetails,
+        builder: (context, state) {
+          final product = state.extra as ProductModel;
+
+          return ProductDetailsScreen(product: product);
+        },
       ),
 
       // =========================

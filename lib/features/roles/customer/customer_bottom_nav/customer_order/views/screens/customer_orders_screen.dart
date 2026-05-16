@@ -6,6 +6,7 @@ import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_order/views/widgets/history_order_tile.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_order/views/widgets/order_filter_tabs.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_order/views/widgets/past_order_tile.dart';
+import 'package:cropify_app/features/roles/customer/customer_bottom_nav/customer_order/views/widgets/stats_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -67,8 +68,13 @@ class CustomerOrdersScreen extends ConsumerWidget {
               const OrderFilterTabs(),
 
               const SizedBox(height: 20),
-              HistoryFilterChips(),
+              if (selectedTab == OrderTab.history) ...[StatsSection()],
+
               const SizedBox(height: 20),
+              if (selectedTab == OrderTab.history) ...[
+                const HistoryFilterChips(),
+                const SizedBox(height: 20),
+              ],
               Expanded(
                 child: selectedTab == OrderTab.active
                     /// ACTIVE TAB
