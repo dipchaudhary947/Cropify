@@ -1,6 +1,8 @@
 import 'package:cropify_app/features/roles/customer/products/view_model/product_view_model.dart';
+import 'package:cropify_app/routes/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../model/product_model.dart';
 
 class ProductDetailsScreen extends ConsumerWidget {
@@ -254,20 +256,31 @@ class ProductDetailsScreen extends ConsumerWidget {
                             ),
                           ),
 
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.green.shade100,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Text(
-                              "Chat",
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w600,
+                          GestureDetector(
+                            onTap: () {
+                              context.pushNamed(
+                                RouteNames.chat,
+                                extra: product,
+                              );
+                            },
+
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                                vertical: 8,
+                              ),
+
+                              decoration: BoxDecoration(
+                                color: Colors.green.shade100,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+
+                              child: const Text(
+                                "Chat",
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                           ),

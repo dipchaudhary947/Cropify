@@ -26,29 +26,13 @@ class _AllFarmersScreenState extends ConsumerState<AllFarmersScreen> {
       backgroundColor: const Color(0xffF7F8F2),
 
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xffF7F8F2),
         elevation: 0,
         centerTitle: true,
-
         title: const Text(
           "Nearby Farmers",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-
-        leading: Padding(
-          padding: const EdgeInsets.all(8),
-
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-
-              icon: const Icon(Icons.arrow_back, color: Colors.black),
-            ),
-          ),
         ),
       ),
 

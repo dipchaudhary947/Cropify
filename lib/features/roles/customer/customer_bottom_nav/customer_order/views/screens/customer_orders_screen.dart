@@ -41,14 +41,6 @@ class CustomerOrdersScreen extends ConsumerWidget {
               /// HEADER
               Row(
                 children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.grey.shade100,
-
-                    child: const Icon(Icons.arrow_back),
-                  ),
-
-                  const SizedBox(width: 16),
-
                   Text(
                     selectedTab == OrderTab.history
                         ? "Order History"

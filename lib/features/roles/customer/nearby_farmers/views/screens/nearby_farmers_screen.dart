@@ -25,81 +25,27 @@ class _NearbyFarmersScreenState extends ConsumerState<NearbyFarmersScreen> {
 
     return Scaffold(
       backgroundColor: const Color(0xffF7F8F2),
-
-      appBar: AppBar(
-        backgroundColor: const Color(0xffF7F8F2),
-        elevation: 0,
-        centerTitle: true,
-
-        title: const Text(
-          "Nearby Farmers",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-
-        leading: Padding(
-          padding: const EdgeInsets.all(8),
-
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.black),
-
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-        ),
-
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 14),
-
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-
-              child: IconButton(
-                onPressed: () {},
-
-                icon: const Icon(Icons.tune, color: Colors.black),
-              ),
-            ),
-          ),
-        ],
-      ),
-
       body: Padding(
         padding: const EdgeInsets.all(16),
-
         child: Column(
           children: [
             const FarmerMapSection(),
-
             const SizedBox(height: 18),
-
             const FarmerSearchField(),
-
             const SizedBox(height: 18),
-
             FarmerFilterChips(
               selectedFilter: selectedFilter,
-
               onSelected: (filter) {
                 setState(() {
                   selectedFilter = filter;
                 });
               },
             ),
-
             const SizedBox(height: 18),
-
             Expanded(
               child: ListView.separated(
                 itemCount: farmers.length,
-
                 separatorBuilder: (_, __) => const SizedBox(height: 14),
-
                 itemBuilder: (context, index) {
                   return NearbyFarmerCard(farmer: farmers[index]);
                 },

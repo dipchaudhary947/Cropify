@@ -2,6 +2,7 @@ import 'package:cropify_app/features/auth/views/screens/login_screen.dart';
 import 'package:cropify_app/features/auth/views/screens/register_screen.dart';
 
 import 'package:cropify_app/features/onboarding/views/screens/onboarding_screen.dart';
+import 'package:cropify_app/features/roles/customer/chat/view/screens/chat_screen.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/model/category_model.dart';
 import 'package:cropify_app/features/roles/customer/customer_bottom_nav/home/views/screens/all_categories_screen.dart';
 import 'package:cropify_app/features/roles/customer/products/model/product_model.dart';
@@ -138,6 +139,16 @@ class AppRouter {
           final product = state.extra as ProductModel;
 
           return ProductDetailsScreen(product: product);
+        },
+      ),
+      GoRoute(
+        path: RoutePaths.chat,
+        name: RouteNames.chat,
+
+        builder: (context, state) {
+          final product = state.extra as ProductModel;
+
+          return ChatScreen(product: product);
         },
       ),
 

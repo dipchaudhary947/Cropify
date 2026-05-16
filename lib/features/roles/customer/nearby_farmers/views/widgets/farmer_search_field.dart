@@ -13,17 +13,6 @@ class FarmerSearchField extends StatelessWidget {
 
         prefixIcon: Icon(Icons.search, color: Colors.grey.shade600),
 
-        suffixIcon: Container(
-          margin: const EdgeInsets.all(6),
-
-          decoration: BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.circular(14),
-          ),
-
-          child: const Icon(Icons.tune, color: Colors.white, size: 20),
-        ),
-
         filled: true,
         fillColor: const Color(0xffEFEFDF),
 

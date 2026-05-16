@@ -21,11 +21,11 @@ class _SplashScreenState extends State<SplashScreen>
     // Animation
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 2),
     )..repeat();
 
     // Navigation
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
         context.goNamed(RouteNames.onboarding);
       }

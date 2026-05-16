@@ -13,6 +13,7 @@ class RouteNames {
   static const allCategories = 'allCategories';
   static const allProducts = 'allProducts';
   static const productDetails = 'productDetails';
+  static const chat = "chat";
 
   //Farmer Bottom Nav Screens
   static const farmerBottomScreen = 'farmerBottomScreen';

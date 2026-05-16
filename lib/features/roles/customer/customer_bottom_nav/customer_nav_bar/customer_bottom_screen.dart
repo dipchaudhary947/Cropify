@@ -27,7 +27,7 @@ class CustomerBottomScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _navItem(0, Icons.home, "Home", currentIndex),
-              _navItem(1, Icons.list, "Orders", currentIndex),
+              _navItem(1, Icons.assignment_outlined, "Orders", currentIndex),
               _navItem(2, Icons.shopping_cart, "Cart", currentIndex),
               _navItem(3, Icons.person, "Profile", currentIndex),
             ],

@@ -12,6 +12,7 @@ class RoutePaths {
   static const allCategories = '/allCategories';
   static const allProducts = '/all-products';
   static const productDetails = '/product-details';
+  static const chat = "/chat";
 
   // FARMER
   static const dashboard = '/dashboard';
